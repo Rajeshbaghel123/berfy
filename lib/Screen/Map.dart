@@ -28,8 +28,11 @@ class _MapState extends State<Map> {
   final Set<Marker> _markers = {};
 
   Future getCurrentLocation() async {
-    List<Placemark> placemark =
-        await GeocodingPlatform.instance.placemarkFromCoordinates(
+    // Guard against nulls to avoid unchecked use of nullable values
+    if (widget.latitude == null || widget.longitude == null) return;
+
+    // Use top-level function to avoid nullable platform instance warning
+    List<Placemark> placemark = await placemarkFromCoordinates(
       widget.latitude!,
       widget.longitude!,
     );
@@ -77,11 +80,11 @@ class _MapState extends State<Map> {
             getTranslated(context, 'CHOOSE_LOCATION')!, context),
         body: SafeArea(
             child: Column(
-          children: <Widget>[
-            Expanded(
-              child: Stack(children: [
-                (latlong != null)
-                    ? GoogleMap(
+              children: <Widget>[
+                Expanded(
+                  child: Stack(children: [
+                    (latlong != null)
+                        ? GoogleMap(
                         initialCameraPosition: _cameraPosition,
                         onMapCreated: (GoogleMapController controller) {
                           _controller = (controller);
@@ -97,52 +100,52 @@ class _MapState extends State<Map> {
                             });
                           }
                         })
-                    : const SizedBox.shrink(),
-              ]),
-            ),
-            TextField(
-              style: Theme.of(context)
-                  .textTheme
-                  .titleSmall!
-                  .copyWith(color: Theme.of(context).colorScheme.fontColor),
-              cursorColor: Theme.of(context).colorScheme.black,
-              controller: locationController,
-              readOnly: true,
-              decoration: InputDecoration(
-                icon: Container(
-                  margin: const EdgeInsetsDirectional.only(start: 20, top: 0),
-                  width: 10,
-                  height: 10,
-                  child: const Icon(
-                    Icons.location_on,
-                    color: Colors.green,
+                        : const SizedBox.shrink(),
+                  ]),
+                ),
+                TextField(
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleSmall!
+                      .copyWith(color: Theme.of(context).colorScheme.fontColor),
+                  cursorColor: Theme.of(context).colorScheme.black,
+                  controller: locationController,
+                  readOnly: true,
+                  decoration: InputDecoration(
+                    icon: Container(
+                      margin: const EdgeInsetsDirectional.only(start: 20, top: 0),
+                      width: 10,
+                      height: 10,
+                      child: const Icon(
+                        Icons.location_on,
+                        color: Colors.green,
+                      ),
+                    ),
+                    hintText: getTranslated(context, "PICK_UP")!,
+                    border: InputBorder.none,
+                    contentPadding:
+                    const EdgeInsetsDirectional.only(start: 15.0, top: 12.0),
                   ),
                 ),
-                hintText: getTranslated(context, "PICK_UP")!,
-                border: InputBorder.none,
-                contentPadding:
-                    const EdgeInsetsDirectional.only(start: 15.0, top: 12.0),
-              ),
-            ),
-            ElevatedButton(
-              child: Text(
-                getTranslated(context, "UPDATE_LOCATION")!,
-                style: Theme.of(context)
-                    .textTheme
-                    .titleSmall!
-                    .copyWith(color: Theme.of(context).colorScheme.white),
-              ),
-              onPressed: () async {
-                if (widget.from == getTranslated(context, 'ADDADDRESS')) {
-                  latitude = latlong!.latitude.toString();
-                  longitude = latlong!.longitude.toString();
-                }
-                Future.delayed(const Duration(milliseconds: 500),
-                    () => Navigator.pop(context));
-              },
-            ),
-          ],
-        )));
+                ElevatedButton(
+                  child: Text(
+                    getTranslated(context, "UPDATE_LOCATION")!,
+                    style: Theme.of(context)
+                        .textTheme
+                        .titleSmall!
+                        .copyWith(color: Theme.of(context).colorScheme.white),
+                  ),
+                  onPressed: () async {
+                    if (widget.from == getTranslated(context, 'ADDADDRESS')) {
+                      latitude = latlong!.latitude.toString();
+                      longitude = latlong!.longitude.toString();
+                    }
+                    Future.delayed(const Duration(milliseconds: 500),
+                            () => Navigator.pop(context));
+                  },
+                ),
+              ],
+            )));
   }
 
   Set<Marker> myMarker() {
@@ -160,7 +163,7 @@ class _MapState extends State<Map> {
 
   Future<void> getLocation() async {
     List<Placemark> placemark =
-        await placemarkFromCoordinates(latlong!.latitude, latlong!.longitude);
+    await placemarkFromCoordinates(latlong!.latitude, latlong!.longitude);
 
     var address;
 

@@ -180,7 +180,7 @@ class StateAddress extends State<AddAddress> with TickerProviderStateMixin {
 
   _scrollListener() async {
     if (_cityScrollController.offset >=
-            _cityScrollController.position.maxScrollExtent &&
+        _cityScrollController.position.maxScrollExtent &&
         !_cityScrollController.position.outOfRange) {
       if (mounted) {
         //setState(() {});
@@ -197,7 +197,7 @@ class StateAddress extends State<AddAddress> with TickerProviderStateMixin {
 
   _pincodeScrollListener() async {
     if (_pinCodeScrollController.offset >=
-            _pinCodeScrollController.position.maxScrollExtent &&
+        _pinCodeScrollController.position.maxScrollExtent &&
         !_pinCodeScrollController.position.outOfRange) {
       if (mounted) {
         setState(() {
@@ -216,9 +216,9 @@ class StateAddress extends State<AddAddress> with TickerProviderStateMixin {
       appBar: getSimpleAppBar(getTranslated(context, 'ADDRESS_LBL')!, context),
       body: _isNetworkAvail
           ? Stack(children: <Widget>[
-              _showContent(),
-              showCircularProgress(_isLoadProcess, colors.primary),
-            ])
+        _showContent(),
+        showCircularProgress(_isLoadProcess, colors.primary),
+      ])
           : noInternet(context),
     );
   }
@@ -365,26 +365,26 @@ class StateAddress extends State<AddAddress> with TickerProviderStateMixin {
                 .titleSmall!
                 .copyWith(color: colors.whiteTemp),
             decoration: InputDecoration(
-                label: Text(getTranslated(context, 'NAME_LBL')!),
-                filled: true,
-                fillColor: Theme.of(context).colorScheme.white,
-                isDense: true,
-                hintText: getTranslated(context, 'NAME_LBL'),
-                hintStyle: Theme.of(context)
-                .textTheme
-                .titleSmall!
-                .copyWith(color: colors.whiteTemp),
-                border: OutlineInputBorder(
-                  borderSide:
-                      BorderSide(color:  colors.primary_app),
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
-                enabledBorder: OutlineInputBorder(
-                  borderSide:
-                      BorderSide(color:  colors.primary_app),
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
+              label: Text(getTranslated(context, 'NAME_LBL')!),
+              filled: true,
+              fillColor: Theme.of(context).colorScheme.white,
+              isDense: true,
+              hintText: getTranslated(context, 'NAME_LBL'),
+              hintStyle: Theme.of(context)
+                  .textTheme
+                  .titleSmall!
+                  .copyWith(color: colors.whiteTemp),
+              border: OutlineInputBorder(
+                borderSide:
+                BorderSide(color:  colors.primary_app),
+                borderRadius: BorderRadius.circular(10.0),
               ),
+              enabledBorder: OutlineInputBorder(
+                borderSide:
+                BorderSide(color:  colors.primary_app),
+                borderRadius: BorderRadius.circular(10.0),
+              ),
+            ),
           ),
         ),
       ),
@@ -409,7 +409,7 @@ class StateAddress extends State<AddAddress> with TickerProviderStateMixin {
             inputFormatters: [FilteringTextInputFormatter.digitsOnly],
             textInputAction: TextInputAction.next,
             focusNode: monoFocus,
-            
+
             style: Theme.of(context)
                 .textTheme
                 .titleSmall!
@@ -425,20 +425,20 @@ class StateAddress extends State<AddAddress> with TickerProviderStateMixin {
               _fieldFocusChange(context, monoFocus!, almonoFocus);
             },
             decoration: InputDecoration(
-                label: Text(getTranslated(context, 'MOBILEHINT_LBL')!),
-                filled: true,fillColor: Theme.of(context).colorScheme.white,
-                isDense: true,
-                hintText: getTranslated(context, 'MOBILEHINT_LBL'),
-                border: OutlineInputBorder(
-                  borderSide:
-                      BorderSide(color:  colors.primary_app),
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
-                enabledBorder: OutlineInputBorder(
-                  borderSide:
-                      BorderSide(color:  colors.primary_app),
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
+              label: Text(getTranslated(context, 'MOBILEHINT_LBL')!),
+              filled: true,fillColor: Theme.of(context).colorScheme.white,
+              isDense: true,
+              hintText: getTranslated(context, 'MOBILEHINT_LBL'),
+              border: OutlineInputBorder(
+                borderSide:
+                BorderSide(color:  colors.primary_app),
+                borderRadius: BorderRadius.circular(10.0),
+              ),
+              enabledBorder: OutlineInputBorder(
+                borderSide:
+                BorderSide(color:  colors.primary_app),
+                borderRadius: BorderRadius.circular(10.0),
+              ),
             ),
           ),
         ),
@@ -483,7 +483,7 @@ class StateAddress extends State<AddAddress> with TickerProviderStateMixin {
                             .textTheme
                             .titleMedium!
                             .copyWith(
-                                color:  colors.primary_app),
+                            color:  colors.primary_app),
                       ),
                     ),
                     Row(
@@ -491,7 +491,7 @@ class StateAddress extends State<AddAddress> with TickerProviderStateMixin {
                         Expanded(
                           child: Padding(
                             padding:
-                                const EdgeInsets.symmetric(horizontal: 8.0),
+                            const EdgeInsets.symmetric(horizontal: 8.0),
                             child: TextField(
                               controller: _pinCodeController,
                               keyboardType: TextInputType.phone,
@@ -501,7 +501,7 @@ class StateAddress extends State<AddAddress> with TickerProviderStateMixin {
                               ),
                               decoration: InputDecoration(
                                 contentPadding:
-                                    const EdgeInsets.fromLTRB(0, 15.0, 0, 15.0),
+                                const EdgeInsets.fromLTRB(0, 15.0, 0, 15.0),
                                 hintText: getTranslated(context, 'SEARCH_LBL'),
                                 hintStyle: TextStyle(
                                     color: colors.primary.withOpacity(0.5)),
@@ -542,68 +542,68 @@ class StateAddress extends State<AddAddress> with TickerProviderStateMixin {
                     Divider(color: Theme.of(context).colorScheme.lightBlack),
                     pincodeLoading
                         ? const Center(
-                            child: Padding(
-                              padding: EdgeInsets.symmetric(vertical: 50.0),
-                              child: CircularProgressIndicator(),
-                            ),
-                          )
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(vertical: 50.0),
+                        child: CircularProgressIndicator(),
+                      ),
+                    )
                         : Flexible(
-                            child: SizedBox(
-                              height: MediaQuery.of(context).size.height * 0.4,
-                              child: SingleChildScrollView(
-                                controller: _pinCodeScrollController,
-                                child: Column(
-                                  children: [
-                                    if (IS_SHIPROCKET_ON == "1")
-                                      InkWell(
-                                        onTap: () {
-                                          setStater(() {
-                                            selPincode = null;
+                      child: SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.4,
+                        child: SingleChildScrollView(
+                          controller: _pinCodeScrollController,
+                          child: Column(
+                            children: [
+                              if (IS_SHIPROCKET_ON == "1")
+                                InkWell(
+                                  onTap: () {
+                                    setStater(() {
+                                      selPincode = null;
 
-                                            pincodeC!.clear();
-                                            selectedPincode = null;
+                                      pincodeC!.clear();
+                                      selectedPincode = null;
 
-                                            pincodeEnable = true;
-                                            Navigator.of(context).pop();
-                                            setState(() {});
-                                          });
-                                        },
-                                        child: Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: Align(
-                                            alignment: Alignment.topLeft,
-                                            child: Text(
-                                              getTranslated(context,
-                                                  'OTHER_PIN_CODE_LBL')!,
-                                              textAlign: TextAlign.start,
-                                              style: Theme.of(context)
-                                                  .textTheme
-                                                  .titleSmall!
-                                                  .copyWith(
-                                                      color: Theme.of(context)
-                                                          .colorScheme
-                                                          .primary),
-                                            ),
-                                          ),
-                                        ),
+                                      pincodeEnable = true;
+                                      Navigator.of(context).pop();
+                                      setState(() {});
+                                    });
+                                  },
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Align(
+                                      alignment: Alignment.topLeft,
+                                      child: Text(
+                                        getTranslated(context,
+                                            'OTHER_PIN_CODE_LBL')!,
+                                        textAlign: TextAlign.start,
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .titleSmall!
+                                            .copyWith(
+                                            color: Theme.of(context)
+                                                .colorScheme
+                                                .primary),
                                       ),
-                                    pincodeSearchList.isNotEmpty
-                                        ? Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: getPincodeList(setStater))
-                                        : Padding(
-                                            padding: const EdgeInsets.symmetric(
-                                                vertical: 20.0),
-                                            child: getNoItem(context),
-                                          ),
-                                    showCircularProgress(
-                                        isLoadingMorePincode!, colors.primary),
-                                  ],
+                                    ),
+                                  ),
                                 ),
+                              pincodeSearchList.isNotEmpty
+                                  ? Column(
+                                  crossAxisAlignment:
+                                  CrossAxisAlignment.start,
+                                  children: getPincodeList(setStater))
+                                  : Padding(
+                                padding: const EdgeInsets.symmetric(
+                                    vertical: 20.0),
+                                child: getNoItem(context),
                               ),
-                            ),
-                          )
+                              showCircularProgress(
+                                  isLoadingMorePincode!, colors.primary),
+                            ],
+                          ),
+                        ),
+                      ),
+                    )
                   ],
                 ),
               ),
@@ -641,7 +641,7 @@ class StateAddress extends State<AddAddress> with TickerProviderStateMixin {
                           .textTheme
                           .titleMedium!
                           .copyWith(
-                              color:  colors.primary_app),
+                          color:  colors.primary_app),
                     ),
                   ),
                   Row(
@@ -657,19 +657,19 @@ class StateAddress extends State<AddAddress> with TickerProviderStateMixin {
                             ),
                             decoration: InputDecoration(
                               contentPadding:
-                                  const EdgeInsets.fromLTRB(0, 15.0, 0, 15.0),
+                              const EdgeInsets.fromLTRB(0, 15.0, 0, 15.0),
                               hintText: getTranslated(context, 'SEARCH_LBL'),
                               hintStyle: TextStyle(
                                   color: colors.primary.withOpacity(0.5)),
                               enabledBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
                                     color:
-                                        Theme.of(context).colorScheme.primary),
+                                    Theme.of(context).colorScheme.primary),
                               ),
                               focusedBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
                                     color:
-                                        Theme.of(context).colorScheme.primary),
+                                    Theme.of(context).colorScheme.primary),
                               ),
                             ),
                           ),
@@ -695,82 +695,82 @@ class StateAddress extends State<AddAddress> with TickerProviderStateMixin {
                   ),
                   cityLoading
                       ? const Center(
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(vertical: 50.0),
-                            child: CircularProgressIndicator(),
-                          ),
-                        )
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(vertical: 50.0),
+                      child: CircularProgressIndicator(),
+                    ),
+                  )
                       : (citySearchLIst.isNotEmpty)
-                          ? Flexible(
-                              child: SizedBox(
-                                height:
-                                    MediaQuery.of(context).size.height * 0.4,
-                                child: SingleChildScrollView(
-                                  controller: _cityScrollController,
-                                  child: Stack(
-                                    children: [
-                                      Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          if (IS_SHIPROCKET_ON == "1")
-                                            InkWell(
-                                              onTap: () {
-                                                setStater(() {
-                                                  isPincode = false;
-                                                  //selAreaPos = null;
-                                                  selPincode = null;
-                                                  pincodeC!.text = '';
-                                                  cityEnable = true;
-                                                  selCityPos = -1;
-                                                  pincodeEnable = true;
-                                                  Navigator.of(context).pop();
-                                                });
-                                                setState(() {});
-                                              },
-                                              child: Padding(
-                                                padding:
-                                                    const EdgeInsets.all(8.0),
-                                                child: Align(
-                                                  alignment: Alignment.topLeft,
-                                                  child: Text(
-                                                    getTranslated(context,
-                                                        'OTHER_CITY_LBL')!,
-                                                    textAlign: TextAlign.start,
-                                                    style: Theme.of(context)
-                                                        .textTheme
-                                                        .titleSmall!
-                                                        .copyWith(
-                                                            color: Theme.of(
-                                                                    context)
-                                                                .colorScheme
-                                                                .primary),
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                          Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: getCityList(setStater),
-                                          ),
-                                          Center(
-                                            child: showCircularProgress(
-                                                isLoadingMoreCity!,
-                                                colors.primary),
-                                          ),
-                                        ],
+                      ? Flexible(
+                    child: SizedBox(
+                      height:
+                      MediaQuery.of(context).size.height * 0.4,
+                      child: SingleChildScrollView(
+                        controller: _cityScrollController,
+                        child: Stack(
+                          children: [
+                            Column(
+                              crossAxisAlignment:
+                              CrossAxisAlignment.start,
+                              children: [
+                                if (IS_SHIPROCKET_ON == "1")
+                                  InkWell(
+                                    onTap: () {
+                                      setStater(() {
+                                        isPincode = false;
+                                        //selAreaPos = null;
+                                        selPincode = null;
+                                        pincodeC!.text = '';
+                                        cityEnable = true;
+                                        selCityPos = -1;
+                                        pincodeEnable = true;
+                                        Navigator.of(context).pop();
+                                      });
+                                      setState(() {});
+                                    },
+                                    child: Padding(
+                                      padding:
+                                      const EdgeInsets.all(8.0),
+                                      child: Align(
+                                        alignment: Alignment.topLeft,
+                                        child: Text(
+                                          getTranslated(context,
+                                              'OTHER_CITY_LBL')!,
+                                          textAlign: TextAlign.start,
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .titleSmall!
+                                              .copyWith(
+                                              color: Theme.of(
+                                                  context)
+                                                  .colorScheme
+                                                  .primary),
+                                        ),
                                       ),
-                                    ],
+                                    ),
                                   ),
+                                Column(
+                                  crossAxisAlignment:
+                                  CrossAxisAlignment.start,
+                                  children: getCityList(setStater),
                                 ),
-                              ),
-                            )
-                          : Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(vertical: 20.0),
-                              child: getNoItem(context),
-                            )
+                                Center(
+                                  child: showCircularProgress(
+                                      isLoadingMoreCity!,
+                                      colors.primary),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  )
+                      : Padding(
+                    padding:
+                    const EdgeInsets.symmetric(vertical: 20.0),
+                    child: getNoItem(context),
+                  )
                 ],
               ),
             );
@@ -785,43 +785,43 @@ class StateAddress extends State<AddAddress> with TickerProviderStateMixin {
         .asMap()
         .map(
           (index, element) => MapEntry(
-            index,
-            InkWell(
-              onTap: () {
-                if (mounted) {
-                  pinCodeOffset = 0;
-                  _pinCodeController.clear();
+        index,
+        InkWell(
+          onTap: () {
+            if (mounted) {
+              pinCodeOffset = 0;
+              _pinCodeController.clear();
 
-                  stateSetter(
+              stateSetter(
                     () {
-                      pincodeEnable = false;
-                      pincodeC!.clear();
+                  pincodeEnable = false;
+                  pincodeC!.clear();
 
-                      selPincode = pincodeSearchList[index];
-                      pincode = selPincode!.zipcode;
-                      selectedPincode = pincodeSearchList[index].zipcode!;
-                      pincodeC!.text = selPincode!.zipcode!;
-                    },
-                  );
+                  selPincode = pincodeSearchList[index];
+                  pincode = selPincode!.zipcode;
+                  selectedPincode = pincodeSearchList[index].zipcode!;
+                  pincodeC!.text = selPincode!.zipcode!;
+                },
+              );
 
-                  //getArea(city, false, true);
-                  Navigator.of(context).pop();
-                  setState(() {});
-                }
-              },
-              child: SizedBox(
-                width: double.maxFinite,
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(
-                    pincodeSearchList[index].zipcode!,
-                    style: Theme.of(context).textTheme.titleSmall,
-                  ),
-                ),
+              //getArea(city, false, true);
+              Navigator.of(context).pop();
+              setState(() {});
+            }
+          },
+          child: SizedBox(
+            width: double.maxFinite,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                pincodeSearchList[index].zipcode!,
+                style: Theme.of(context).textTheme.titleSmall,
               ),
             ),
           ),
-        )
+        ),
+      ),
+    )
         .values
         .toList();
   }
@@ -831,48 +831,48 @@ class StateAddress extends State<AddAddress> with TickerProviderStateMixin {
         .asMap()
         .map(
           (index, element) => MapEntry(
-            index,
-            InkWell(
-              onTap: () {
-                if (mounted) {
-                  setStater(
+        index,
+        InkWell(
+          onTap: () {
+            if (mounted) {
+              setStater(
                     () {
-                      isPincode = false;
-                      selCityPos = index;
-                      //selAreaPos = null;
-                      selPincode = null;
-                      pincodeC!.text = '';
-                      cityC!.clear();
-                      cityName = null;
-                      cityEnable = false;
-                      Navigator.of(context).pop();
-                    },
-                  );
+                  isPincode = false;
+                  selCityPos = index;
+                  //selAreaPos = null;
+                  selPincode = null;
+                  pincodeC!.text = '';
+                  cityC!.clear();
+                  cityName = null;
+                  cityEnable = false;
+                  Navigator.of(context).pop();
+                },
+              );
 
-                  city = citySearchLIst[selCityPos!].id;
+              city = citySearchLIst[selCityPos!].id;
 
-                  selectedCity = citySearchLIst[selCityPos!].name;
-                  getPinCode(city, true, true);
-                  setState(() {});
-                }
-                // }
-              },
-              child: SizedBox(
-                width: double.maxFinite,
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(
-                    citySearchLIst[index].name!,
-                    style: Theme.of(context).textTheme.titleSmall!.copyWith(
-                        color: citySearchLIst[index].id == "0"
-                            ? Theme.of(context).colorScheme.primary
-                            :  colors.primary_app),
-                  ),
-                ),
+              selectedCity = citySearchLIst[selCityPos!].name;
+              getPinCode(city, true, true);
+              setState(() {});
+            }
+            // }
+          },
+          child: SizedBox(
+            width: double.maxFinite,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                citySearchLIst[index].name!,
+                style: Theme.of(context).textTheme.titleSmall!.copyWith(
+                    color: citySearchLIst[index].id == "0"
+                        ? Theme.of(context).colorScheme.primary
+                        :  colors.primary_app),
               ),
             ),
           ),
-        )
+        ),
+      ),
+    )
         .values
         .toList();
   }
@@ -895,15 +895,15 @@ class StateAddress extends State<AddAddress> with TickerProviderStateMixin {
                     filled: true,fillColor: Theme.of(context).colorScheme.white,
                     isDense: true,
                     border: OutlineInputBorder(
-                  borderSide:
+                      borderSide:
                       BorderSide(color:  colors.primary_app),
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
-                enabledBorder: OutlineInputBorder(
-                  borderSide:
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide:
                       BorderSide(color:  colors.primary_app),
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
                   ),
                   child: Row(
                     children: [
@@ -920,9 +920,9 @@ class StateAddress extends State<AddAddress> with TickerProviderStateMixin {
                                 selCityPos != null && selCityPos != -1
                                     ? selectedCity!
                                     : cityEnable && IS_SHIPROCKET_ON == "1"
-                                        ? getTranslated(
-                                            context, 'OTHER_CITY_LBL')!
-                                        : '',
+                                    ? getTranslated(
+                                    context, 'OTHER_CITY_LBL')!
+                                    : '',
                                 style: TextStyle(
                                     color: Theme.of(context)
                                         .colorScheme
@@ -958,18 +958,18 @@ class StateAddress extends State<AddAddress> with TickerProviderStateMixin {
               child: GestureDetector(
                 child: InputDecorator(
                     decoration: InputDecoration(
-                        filled: true,fillColor: Theme.of(context).colorScheme.white,
-                        isDense: true,
-                        border: OutlineInputBorder(
-                  borderSide:
-                      BorderSide(color:  colors.primary_app),
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
-                enabledBorder: OutlineInputBorder(
-                  borderSide:
-                      BorderSide(color:  colors.primary_app),
-                  borderRadius: BorderRadius.circular(10.0),
-                ),),
+                      filled: true,fillColor: Theme.of(context).colorScheme.white,
+                      isDense: true,
+                      border: OutlineInputBorder(
+                        borderSide:
+                        BorderSide(color:  colors.primary_app),
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide:
+                        BorderSide(color:  colors.primary_app),
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),),
                     child: Row(
                       children: [
                         Expanded(
@@ -983,12 +983,12 @@ class StateAddress extends State<AddAddress> with TickerProviderStateMixin {
                               ),
                               Text(
                                   selectedPincode != null &&
-                                          selectedPincode != ''
+                                      selectedPincode != ''
                                       ? selectedPincode!
                                       : pincodeEnable
-                                          ? getTranslated(
-                                              context, 'OTHER_PIN_CODE_LBL')!
-                                          : '',
+                                      ? getTranslated(
+                                      context, 'OTHER_PIN_CODE_LBL')!
+                                      : '',
                                   style: TextStyle(
                                       color: Theme.of(context)
                                           .colorScheme
@@ -1054,15 +1054,15 @@ class StateAddress extends State<AddAddress> with TickerProviderStateMixin {
                       isDense: true,
                       hintText: getTranslated(context, 'CITY_NAME_LBL')!,
                       border: OutlineInputBorder(
-                  borderSide:
-                      BorderSide(color:  colors.primary_app),
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
-                enabledBorder: OutlineInputBorder(
-                  borderSide:
-                      BorderSide(color:  colors.primary_app),
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
+                        borderSide:
+                        BorderSide(color:  colors.primary_app),
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide:
+                        BorderSide(color:  colors.primary_app),
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
                     ),
                   ),
                 ),
@@ -1110,20 +1110,20 @@ class StateAddress extends State<AddAddress> with TickerProviderStateMixin {
                   decoration: InputDecoration(
                     label: Text(getTranslated(context, 'AREA_NAME_LBL')!),
                     hintStyle:
-                        Theme.of(context).textTheme.titleSmall!.copyWith(),
+                    Theme.of(context).textTheme.titleSmall!.copyWith(),
                     filled: true,fillColor: Theme.of(context).colorScheme.white,
                     isDense: true,
                     hintText: getTranslated(context, 'AREA_NAME_LBL')!,
                     border: OutlineInputBorder(
-                  borderSide:
+                      borderSide:
                       BorderSide(color:  colors.primary_app),
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
-                enabledBorder: OutlineInputBorder(
-                  borderSide:
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide:
                       BorderSide(color:  colors.primary_app),
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
                   ),
                 ),
               ),
@@ -1176,15 +1176,15 @@ class StateAddress extends State<AddAddress> with TickerProviderStateMixin {
                     isDense: true,
                     hintText: getTranslated(context, 'ADDRESS_LBL'),
                     border: OutlineInputBorder(
-                  borderSide:
+                      borderSide:
                       BorderSide(color:  colors.primary_app),
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
-                enabledBorder: OutlineInputBorder(
-                  borderSide:
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide:
                       BorderSide(color:  colors.primary_app),
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
                     suffixIcon: IconButton(
                       icon: const Icon(
                         Icons.my_location,
@@ -1204,27 +1204,34 @@ class StateAddress extends State<AddAddress> with TickerProviderStateMixin {
                             context,
                             CupertinoPageRoute(
                                 builder: (context) => Map(
-                                      latitude:
-                                          latitude == null || latitude == ''
-                                              ? position.latitude
-                                              : double.parse(latitude!),
-                                      longitude:
-                                          longitude == null || longitude == ''
-                                              ? position.longitude
-                                              : double.parse(longitude!),
-                                      from:
-                                          getTranslated(context, 'ADDADDRESS'),
-                                    )));
+                                  latitude:
+                                  latitude == null || latitude == ''
+                                      ? position.latitude
+                                      : double.parse(latitude!),
+                                  longitude:
+                                  longitude == null || longitude == ''
+                                      ? position.longitude
+                                      : double.parse(longitude!),
+                                  from:
+                                  getTranslated(context, 'ADDADDRESS'),
+                                )));
                         if (mounted) setState(() {});
+                        // Ensure we have lat/long before reverse geocoding
+                        if (latitude == null || longitude == null) {
+                          final pos = await Geolocator.getCurrentPosition(
+                              desiredAccuracy: LocationAccuracy.high);
+                          latitude = pos.latitude.toString();
+                          longitude = pos.longitude.toString();
+                        }
                         List<Placemark> placemark =
-                            await placemarkFromCoordinates(
-                                double.parse(latitude!),
-                                double.parse(longitude!));
+                        await placemarkFromCoordinates(
+                            double.parse(latitude!),
+                            double.parse(longitude!));
 
-                        var address;
-                        address = placemark[0].name;
-                        address = address + ',' + placemark[0].subLocality;
-                        address = address + ',' + placemark[0].locality;
+                        var fullAddress;
+                        fullAddress = placemark[0].name;
+                        fullAddress = fullAddress + ',' + placemark[0].subLocality;
+                        fullAddress = fullAddress + ',' + placemark[0].locality;
 
                         state = placemark[0].administrativeArea;
                         country = placemark[0].country;
@@ -1233,7 +1240,7 @@ class StateAddress extends State<AddAddress> with TickerProviderStateMixin {
                           setState(() {
                             countryC!.text = country!;
                             stateC!.text = state!;
-                            addressC!.text = address;
+                            addressC!.text = fullAddress;
                           });
                         }
                       },
@@ -1277,20 +1284,20 @@ class StateAddress extends State<AddAddress> with TickerProviderStateMixin {
                   });
                 },
                 decoration: InputDecoration(
-                    label: Text(getTranslated(context, 'PINCODEHINT_LBL')!),
-                    filled: true,fillColor: Theme.of(context).colorScheme.white,
-                    isDense: true,
-                    hintText: getTranslated(context, 'PINCODEHINT_LBL'),
-                    border: OutlineInputBorder(
-                  borderSide:
-                      BorderSide(color:  colors.primary_app),
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
-                enabledBorder: OutlineInputBorder(
-                  borderSide:
-                      BorderSide(color:  colors.primary_app),
-                  borderRadius: BorderRadius.circular(10.0),
-                ),),
+                  label: Text(getTranslated(context, 'PINCODEHINT_LBL')!),
+                  filled: true,fillColor: Theme.of(context).colorScheme.white,
+                  isDense: true,
+                  hintText: getTranslated(context, 'PINCODEHINT_LBL'),
+                  border: OutlineInputBorder(
+                    borderSide:
+                    BorderSide(color:  colors.primary_app),
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide:
+                    BorderSide(color:  colors.primary_app),
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),),
               )),
         ),
       );
@@ -1504,20 +1511,20 @@ class StateAddress extends State<AddAddress> with TickerProviderStateMixin {
               state = value;
             },
             decoration: InputDecoration(
-                label: Text(getTranslated(context, 'STATE_LBL')!),
-                filled: true,fillColor: Theme.of(context).colorScheme.white,
-                isDense: true,
-                hintText: getTranslated(context, 'STATE_LBL'),
-                border: OutlineInputBorder(
-                  borderSide:
-                      BorderSide(color:  colors.primary_app),
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
-                enabledBorder: OutlineInputBorder(
-                  borderSide:
-                      BorderSide(color:  colors.primary_app),
-                  borderRadius: BorderRadius.circular(10.0),
-                ),),
+              label: Text(getTranslated(context, 'STATE_LBL')!),
+              filled: true,fillColor: Theme.of(context).colorScheme.white,
+              isDense: true,
+              hintText: getTranslated(context, 'STATE_LBL'),
+              border: OutlineInputBorder(
+                borderSide:
+                BorderSide(color:  colors.primary_app),
+                borderRadius: BorderRadius.circular(10.0),
+              ),
+              enabledBorder: OutlineInputBorder(
+                borderSide:
+                BorderSide(color:  colors.primary_app),
+                borderRadius: BorderRadius.circular(10.0),
+              ),),
           ),
         ),
       ),
@@ -1551,20 +1558,20 @@ class StateAddress extends State<AddAddress> with TickerProviderStateMixin {
             validator: (val) =>
                 validateField(val!, getTranslated(context, 'FIELD_REQUIRED')),
             decoration: InputDecoration(
-                label: Text(getTranslated(context, 'COUNTRY_LBL')!),
-                filled: true,fillColor: Theme.of(context).colorScheme.white,
-                isDense: true,
-                hintText: getTranslated(context, 'COUNTRY_LBL'),
-                border: OutlineInputBorder(
-                  borderSide:
-                      BorderSide(color:  colors.primary_app),
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
-                enabledBorder: OutlineInputBorder(
-                  borderSide:
-                      BorderSide(color:  colors.primary_app),
-                  borderRadius: BorderRadius.circular(10.0),
-                ),),
+              label: Text(getTranslated(context, 'COUNTRY_LBL')!),
+              filled: true,fillColor: Theme.of(context).colorScheme.white,
+              isDense: true,
+              hintText: getTranslated(context, 'COUNTRY_LBL'),
+              border: OutlineInputBorder(
+                borderSide:
+                BorderSide(color:  colors.primary_app),
+                borderRadius: BorderRadius.circular(10.0),
+              ),
+              enabledBorder: OutlineInputBorder(
+                borderSide:
+                BorderSide(color:  colors.primary_app),
+                borderRadius: BorderRadius.circular(10.0),
+              ),),
           ),
         ),
       ),
@@ -1611,7 +1618,7 @@ class StateAddress extends State<AddAddress> with TickerProviderStateMixin {
       //data["pincode_name"] = pincodeC!.text;
       apiBaseHelper
           .postAPICall(
-              widget.update! ? updateAddressApi : getAddAddressApi, data)
+          widget.update! ? updateAddressApi : getAddAddressApi, data)
           .then((getdata) async {
         bool error = getdata['error'];
         String? msg = getdata['message'];
@@ -1889,7 +1896,7 @@ class StateAddress extends State<AddAddress> with TickerProviderStateMixin {
               child: SingleChildScrollView(
                 child: Padding(
                   padding:
-                      const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                  const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                   child: Column(
                     children: <Widget>[
                       setUserName(),
@@ -1928,10 +1935,9 @@ class StateAddress extends State<AddAddress> with TickerProviderStateMixin {
     latitude = position.latitude.toString();
     longitude = position.longitude.toString();
 
-    List<Placemark> placemark = await GeocodingPlatform.instance
-        .placemarkFromCoordinates(
-            double.parse(latitude!), double.parse(longitude!),
-            localeIdentifier: 'en');
+    // Use the package-level function; remove unsupported 'localeIdentifier' param
+    List<Placemark> placemark = await placemarkFromCoordinates(
+        double.parse(latitude!), double.parse(longitude!));
 
     state = placemark[0].administrativeArea;
     country = placemark[0].country;
@@ -1950,7 +1956,7 @@ class StateAddress extends State<AddAddress> with TickerProviderStateMixin {
         Expanded(
           child: Padding(
             padding:
-                const EdgeInsets.symmetric(horizontal: 15.0, vertical: 8.0),
+            const EdgeInsets.symmetric(horizontal: 15.0, vertical: 8.0),
             child: MaterialButton(
               height: 45.0,
               textColor: Theme.of(context).colorScheme.white,

@@ -2145,7 +2145,7 @@ class StateOrder extends State<OrderDetail>
                 label: getTranslated(context, 'VIEW')!,
                 textColor: Theme.of(context).colorScheme.fontColor,
                 onPressed: () async {
-                  await OpenFilex.open(filePath);
+                  await OpenFilex.open(filePath!);
                 },
               ),
               backgroundColor: Theme.of(context).colorScheme.white,
