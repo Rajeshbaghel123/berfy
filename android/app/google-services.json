@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "298464862821",
+    "firebase_url": "https://berfy-f134f-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "berfy-f134f",
+    "storage_bucket": "berfy-f134f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:298464862821:android:7d1384c565bbf4b0b59c8c",
+        "android_client_info": {
+          "package_name": "com.berfy.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3ctIBNHvDOVu_jbyCbFK2RaSU2UptDwM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
